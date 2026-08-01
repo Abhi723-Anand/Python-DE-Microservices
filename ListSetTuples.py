@@ -33,7 +33,45 @@ Courses.pop() # Remove the last element by default, removed CompSci from the lis
 print(Courses) # Output: ['History', 'Physics']
 
 Courses.pop(1) # Remove the element at index 1
-print(Courses) # Output: ['History', 'CompSci']
+print(Courses) # Output: ['History']
+
 
 popped_course = Courses.pop(0) # Remove the element at index 0 and store it in a variable
 print(popped_course) # Output: 'History'
+
+#Reverse a list with Function, Slicing and Logic
+
+Courses = ['History', 'Math', 'Physics', 'CompSci']
+Courses.reverse() # Reverse the list in place
+print(Courses) # Output: ['CompSci', 'Physics', 'Math', 'History']
+
+Courses_Reverse = Courses[::-1] # Reverse the list using slicing
+print(Courses_Reverse) # Output: ['CompSci', 'Physics', 'Math', 'History']
+
+#Using logic to reverse a list. Traverse the list in reverse order and append each element to a new list.
+Courses = ['History', 'Math', 'Physics', 'CompSci'] 
+reversed_courses = []
+for i in range(len(Courses) - 1, -1, -1):
+    reversed_courses.append(Courses[i])
+print(reversed_courses) # Output: ['CompSci', 'Physics', 'Math', 'History']
+
+
+#Using logic to sort a list. Traverse the list and compare each element with the next element, 
+#if the current element is greater than the next element, swap them. Repeat this process until the list is sorted.
+Courses = ['History', 'Math', 'Physics', 'CompSci']
+for i in range(len(Courses)):
+    for j in range(i + 1, len(Courses)):
+        if Courses[i] > Courses[j]:
+            Courses[i], Courses[j] = Courses[j], Courses[i]
+print(Courses) # Output: ['CompSci', 'History', 'Math', 'Physics']
+
+#how to find duplicate elements in a list. 
+#Create an empty list to store the duplicates, traverse the original list and check if the element is already in the duplicates list, if not, add it to the duplicates list.
+duplicates = []
+Courses_D = ['CompSci', 'History', 'Math', 'Physics', 'CompSci', 'History', 'Math', 'Physics']
+for element in Courses_D:
+    if element in duplicates:
+        continue
+    if Courses_D.count(element) > 1:
+        duplicates.append(element)
+print(duplicates) # Output: ['CompSci', 'History', 'Math', 'Physics']
