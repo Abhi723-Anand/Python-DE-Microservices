@@ -75,3 +75,19 @@ for element in Courses_D:
     if Courses_D.count(element) > 1:
         duplicates.append(element)
 print(duplicates) # Output: ['CompSci', 'History', 'Math', 'Physics']
+
+#How to find the index of duplciate elements in a list. 
+#Create an empty list to store the indexes, traverse the original list and check if the element is already in the indexes list, if not, add it to the indexes list.
+
+indexes = []
+for element in duplicates:
+    indexes.append([i for i, x in enumerate(Courses_D) if x == element])
+print(indexes) # Output: [[0, 4], [1, 5], [2, 6], [3, 7]]
+
+#2nd way
+indexes = []
+Courses_D = ['CompSci', 'History', 'Math', 'Physics', 'CompSci', 'History', 'Math', 'Physics']
+for i, element in enumerate(Courses_D):
+    if element in Courses_D[:i]:
+        indexes.append(i)
+print(indexes) # Output: [4, 5, 6, 7]
