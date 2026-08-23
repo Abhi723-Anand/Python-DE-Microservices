@@ -18,4 +18,4 @@ for i in range(len(arr)):
 #take array input from user
 arr = list(map(float, input("Enter elements of the array separated by space: ").split()))
 for i in range(len(arr) - 1, -1, -1):
-    print(arr[i], end=" ")  # Output: 0.0 5.0 24.0 2.0 1.4  
+    print(arr[i], end=" ")  # Output: 0.0 5.0 24.0 2.0 1.4   
